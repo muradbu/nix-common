@@ -1,9 +1,9 @@
 
-{ pkgs, config, homeDirectory, ... }:
+{ pkgs, config, ... }:
 
 {
   home.username = "murad";
-  home.homeDirectory = homeDirectory;
+  home.homeDirectory = "/home/murad";
 
   home.packages = with pkgs; [
   ];

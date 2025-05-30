@@ -6,12 +6,9 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }: 
-  let
-    homeDirectory = "/home/murad";
-  in
   {
-    nixosModules."user-murad" = import ./modules/nixos/users/murad.nix { homeDirectory = homeDirectory; };
+    nixosModules."user-murad" = ./modules/nixos/users/murad.nix;
   
-    homeManagerModules.user = import ./modules/home-manager/murad.nix { homeDirectory = homeDirectory; };
+    homeManagerModules.user = ./modules/home-manager/murad.nix;
   };
 }

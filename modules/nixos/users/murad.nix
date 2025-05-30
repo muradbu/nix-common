@@ -1,4 +1,4 @@
-{ pkgs, homeDirectory, ... }:
+{ pkgs, ... }:
 
 {
   users.groups.murad = {
@@ -8,7 +8,7 @@
   users.users.murad = {
     isNormalUser = true;
     group = "murad";
-    home = homeDirectory;
+    home = "/home/murad";
     extraGroups = [ "docker" "wheel" "video" "render" ];
     packages = with pkgs; [ ];
     linger = true;
