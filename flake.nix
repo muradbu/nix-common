@@ -6,10 +6,8 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }: {
-    nixosModules."user-murad" = {
-      user = import ./users/murad.nix;
-    };
-
+    nixosModules."user-murad" = import ./users/murad.nix;
+   
     homeManagerModules = {
       user = import ./modules/home-manager/murad.nix;
     };
