@@ -5,11 +5,13 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }: {
-    nixosModules."user-murad" = import ./modules/nixos/users/murad.nix;
-   
-    homeManagerModules = {
-      user = import ./modules/home-manager/murad.nix;
-    };
+  outputs = { self, nixpkgs, home-manager, ... }: 
+  let
+    homeDirectory = "/home/murad";
+  in
+  {
+    nixosModules."user-murad" = import ./modules/nixos/users/murad.nix { homeDirectory = homeDirectory; };
+  
+    homeManagerModules.user = import ./modules/home-manager/murad.nix { homeDirectory = homeDirectory; };
   };
 }
