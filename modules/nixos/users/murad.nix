@@ -12,6 +12,7 @@
     extraGroups = [ "docker" "wheel" "video" "render" ];
     packages = with pkgs; [ ];
     linger = true;
+    initialHashedPassword = "$y$j9T$9EyXxMMX92mW9qu0pjEFC/$Elr3r7SRzJNciCJKoshwGCxZ5OyNR.Z1LhI47lNnth6";
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHzXuAP+Ii/FNTdSWdJgtppL1WNdzDwcPmHEQ3UxYMHu murad@kunafa"
     ];
